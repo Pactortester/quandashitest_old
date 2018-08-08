@@ -1,5 +1,5 @@
 # coding=utf-8
-
+import random
 import time
 
 import logging
@@ -13,7 +13,7 @@ class hwgstest(mytestcase):
     """海外高速测试集"""
 
     def test_hwgs_1(self):
-        """海外高速测试"""
+        """海外高速_企业国外测试"""
 
         # logging.basicConfig(filename='../LOG/' + __name__ + '.log',
         #                     format='[%(asctime)s-%(filename)s-%(levelname)s: %(message)s]', level=logging.DEBUG,
@@ -76,10 +76,11 @@ class hwgstest(mytestcase):
         time.sleep(1)
 
         # 企业 国外
+        suiji11 = random.randint(1, 100)
 
         self.driver.find_element_by_css_selector(
             "body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-qiye > tr:nth-child(1) > td.td-content.contact-select-container > dl > dt > input").send_keys(
-            "拳打死")
+            "{}拳打死".format(suiji11))
         self.driver.find_element_by_css_selector(
             "body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-qiye > tr:nth-child(2) > td.td-content > input").send_keys(
             "tesr")
@@ -200,10 +201,14 @@ class hwgstest(mytestcase):
 
         time.sleep(1)
 
+
         # 企业 自然人
 
+        #suiji11 = random.randint(1, 100)
+
         self.driver.find_element_by_css_selector("body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base > table > thead > tr:nth-child(1) > td.td-content > a:nth-child(2)").click()
-        self.driver.find_element_by_css_selector("body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base.open > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-gsh > tr:nth-child(1) > td.td-content.contact-select-container > dl > dt > input").send_keys("刘大哥")
+        #self.driver.find_element_by_css_selector("body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base.open > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-gsh > tr:nth-child(1) > td.td-content.contact-select-container > dl > dt > input").send_keys("刘{}哥".format(suiji11))
+        self.driver.find_element_by_css_selector("body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base.open > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-gsh > tr:nth-child(1) > td.td-content.contact-select-container > dl > dt > input").send_keys("刘87哥")
         self.driver.find_element_by_css_selector("body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base.open > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-gsh > tr:nth-child(2) > td.td-content > input").send_keys("dalao")
         self.driver.find_element_by_css_selector("body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base.open > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-gsh > tr:nth-child(4) > td.td-content > input").send_keys("140121199506133513")
         self.driver.find_element_by_css_selector("body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap.overseas > div.section-base.open > div.overseas-form > table.table-1.table-overseas.table-type2.active > tbody.tbody-gsh > tr:nth-child(5) > td.td-content.fcountry-container > input.myInput").click()
