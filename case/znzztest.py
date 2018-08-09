@@ -92,7 +92,7 @@ class znzztest(mytestcase):
 
         self.driver.find_element_by_css_selector(
             "body > div.smartRegister-page > div.agentInfo-wrap.applicant-wrap > div.section-base > div.applicant-form > table.table-1.table-applicant.table-type1.active > tbody.tbody-qiye > tr:nth-child(1) > td.td-content.contact-select-container > dl > dt > input").send_keys(
-            "人才")
+            "人{}才".format(random.randint(1,100)))
         self.driver.find_element_by_css_selector("#ssq").click()
         self.driver.find_element_by_css_selector(
             "#companylistrative > div > div.d-dropdown > div.tab-content.active.tab-province > dl.item.item-a-g.clearfix > dd > span:nth-child(1)").click()
